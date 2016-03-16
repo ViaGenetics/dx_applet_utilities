@@ -24,3 +24,19 @@ def load_json_from_file(path_to_file):
         json_object = json.load(file_data)
 
     return json_object
+
+
+def check_compression(filename):
+
+    """Identify the compression used for file
+
+    :param: `filename`: The filename to check for compression
+    :returns: The suffix of a file (if compressed by gzip or bzip2)
+    """
+
+    if filename.endswith(".bz2"):
+        return ".bz2"
+    elif  filename.endswith(".gz"):
+        return ".gz"
+    else:
+        return ""
