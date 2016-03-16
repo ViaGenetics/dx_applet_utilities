@@ -40,3 +40,19 @@ def check_compression(filename):
         return ".gz"
     else:
         return ""
+
+
+
+def get_file_metadata(filename):
+
+    """Retrieve the filename metadata
+
+    :param: `filename`: The filename to extract filename metadata from
+    :returns: Object with sampleID and chr
+    """
+
+    basename_ = os.path.basename(str(fname)).split(".")
+    try:
+    	return { "sampleID": basename_[0], "chr": basename_[1] }
+    except:
+    	return { "sampleID": basename_[0], "chr": None }
