@@ -42,7 +42,6 @@ def check_compression(filename):
         return ""
 
 
-
 def get_file_metadata(filename):
 
     """Retrieve the filename metadata
