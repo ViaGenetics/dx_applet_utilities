@@ -4,6 +4,7 @@ import dxpy
 import logging
 import math
 from dx_applet_utilities.manage_command_execution import execute_command, check_execution_syscode
+from multiprocessing import cpu_count
 
 
 logger = logging.getLogger(__name__)
@@ -33,3 +34,14 @@ def max_memory(percent_to_utilize):
             strftime("%Y-%m-%d %H:%M:%S", gmtime()))
         )
         return 512
+
+
+def number_of_cpus(percentage=1):
+    
+    """Return the number of CPUs on running instance
+
+    :param: `percentage`: Percent of CPUs to allocate for multithreaded processes
+    :returns: The number of CPUs to be used
+    """
+
+    return int(cpu_count()*percentage)
