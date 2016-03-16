@@ -55,3 +55,38 @@ def get_file_metadata(filename):
     	return {"sampleID": basename_[0], "chr": basename_[1]}
     except:
     	return {"sampleID": basename_[0], "chr": None}
+
+
+def chromosome_array(assembly):
+
+    """Retrieves an array of the contigs supported by the reference assembly
+
+    :param: `assembly`: The reference genome in question
+    :returns: Array of all chromosome contigs (of relevance) in reference genome
+    """
+
+    if assembly in ["hg19", "hg38"]:
+        return ["chr1", "chr2", "chr3", "chr4", "chr5", "chr6", "chr7", "chr8",
+            "chr9", "chr10", "chr11", "chr12", "chr13", "chr14", "chr15",
+            "chr16", "chr17", "chr18", "chr19", "chr20", "chr21", "chr22",
+            "chrX", "chrY", "chrMT"
+        ]
+    elif assembly in ["GRCh37", "GRCh38"]:
+        return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",
+            "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
+            "22", "X", "Y", "MT"
+        ]
+    elif assembly == "dm6":
+        return ["chr2L", "chr2R", "chr3L", "chr3R",
+            "chr4", "chrM", "chrX", "chrY"
+        ]
+    elif assembly == 'dm3':
+        return ["chr2L", "chr2R", "chr3L", "chr3R",
+            "chr4", "chrM", "chrX", "chrYHet"
+        ]
+    else:
+        logger.error("{0}: Unsupported assembly:{1}!".format(
+            strftime("%Y-%m-%d %H:%M:%S", gmtime()),
+            assembly)
+        )
+        sys.exit(1)
