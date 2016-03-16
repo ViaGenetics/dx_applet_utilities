@@ -8,7 +8,7 @@ import subprocess
 logger = logging.getLogger(__name__)
 logger.addHandler(dxpy.DXLogHandler())
 logger.propagate = False
-logger.setLevel('INFO')
+logger.setLevel("INFO")
 
 
 def execute_command(command, debug=False):
@@ -53,17 +53,17 @@ def check_execution_syscode(command_result, command_description):
     """
 
     if command_result["sysCode"] == 0:
-        logger.info('{0}: Execution of {1} finished successfully!'.format(
+        logger.info("{0}: Execution of {1} finished successfully!".format(
             strftime("%Y-%m-%d %H:%M:%S", gmtime()), command_description)
         )
 
     else:
-        logger.error('{0}: Execution of {1} failed!'.format(
+        logger.error("{0}: Execution of {1} failed!".format(
             strftime("%Y-%m-%d %H:%M:%S", gmtime()), command_description)
         )
-        logger.error('{0}: Command that was executed: {1}'.format(
+        logger.error("{0}: Command that was executed: {1}".format(
             strftime("%Y-%m-%d %H:%M:%S", gmtime()), command_result["cmd"])
         )
-        logger.error('STDOUT: {0}'.format(command_result["out"]))
-        logger.error('STDERR: {0}'.format(command_result["err"]))
+        logger.error("STDOUT: {0}".format(command_result["out"]))
+        logger.error("STDERR: {0}".format(command_result["err"]))
         sys.exit(1)

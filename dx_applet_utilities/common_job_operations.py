@@ -8,7 +8,7 @@ import json
 logger = logging.getLogger(__name__)
 logger.addHandler(dxpy.DXLogHandler())
 logger.propagate = False
-logger.setLevel('INFO')
+logger.setLevel("INFO")
 
 
 def load_json_from_file(path_to_file):
@@ -20,7 +20,7 @@ def load_json_from_file(path_to_file):
     """
 
     json_object = {}
-    with open(path_to_file, 'r') as file_data:
+    with open(path_to_file, "r") as file_data:
         json_object = json.load(file_data)
 
     return json_object

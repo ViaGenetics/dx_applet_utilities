@@ -10,7 +10,7 @@ from multiprocessing import cpu_count
 logger = logging.getLogger(__name__)
 logger.addHandler(dxpy.DXLogHandler())
 logger.propagate = False
-logger.setLevel('INFO')
+logger.setLevel("INFO")
 
 
 def max_memory(percent_to_utilize):
@@ -37,7 +37,7 @@ def max_memory(percent_to_utilize):
 
 
 def number_of_cpus(percentage=1):
-    
+
     """Return the number of CPUs on running instance
 
     :param: `percentage`: Percent of CPUs to allocate for multithreaded processes
