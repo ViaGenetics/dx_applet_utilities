@@ -2,7 +2,6 @@ import os
 import sys
 import dxpy
 import logging
-import math
 from dx_applet_utilities.manage_command_execution import execute_command, check_execution_syscode
 from multiprocessing import cpu_count
 
