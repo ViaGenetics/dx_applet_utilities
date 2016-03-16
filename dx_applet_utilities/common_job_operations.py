@@ -53,6 +53,6 @@ def get_file_metadata(filename):
 
     basename_ = os.path.basename(str(fname)).split(".")
     try:
-    	return { "sampleID": basename_[0], "chr": basename_[1] }
+    	return {"sampleID": basename_[0], "chr": basename_[1]}
     except:
-    	return { "sampleID": basename_[0], "chr": None }
+    	return {"sampleID": basename_[0], "chr": None}
