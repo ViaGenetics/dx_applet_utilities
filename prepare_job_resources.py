@@ -21,7 +21,7 @@ def max_memory(percent_to_utilize):
     """
 
     total_ram_cmd = "head -n1 /proc/meminfo"
-    calculate_ram_cmd = "awk '\{ print int($2*{0}/1024) \}'".format(percent_to_utilize)
+    calculate_ram_cmd = "awk '{ " + "print int($2*{0}/1024) ".format(percent_to_utilize) + "}'"
     ram_allocation = execute_command("{0} | {1}".format(
         total_ram_cmd, calculate_ram_cmd)
     )
