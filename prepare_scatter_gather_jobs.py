@@ -3,6 +3,7 @@ import sys
 import dxpy
 import logging
 import math
+import operator
 
 
 logger = logging.getLogger(__name__)
